@@ -1,0 +1,87 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout
+  title="Lead Generation Sydney &#8212; Fill Your Pipeline"
+  description="SNAV Marketing builds lead generation funnels for Sydney tradies, restaurants and SMEs. Qualified enquiries delivered directly to your inbox. No time-wasters."
+  canonical="/services/lead-generation"
+>
+  <section class="service-hero">
+    <div class="container-lg">
+      <a href="/services" class="breadcrumb">&#8592; All Services</a>
+      <div class="service-icon-lg">⚡</div>
+      <h1 class="service-title">Lead Generation</h1>
+      <p class="service-subtitle">Qualified enquiries, delivered. We build end-to-end systems that attract, capture and nurture leads so your sales pipeline never runs dry.</p>
+      <a href="/contact" class="btn-primary">Start Generating Leads</a>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-lg service-layout">
+      <div class="service-main">
+        <h2 class="service-h2">Stop Chasing Jobs. Let Them Come to You.</h2>
+        <p class="service-body">Lead generation is about building a system &#8212; not a single ad or a lucky Facebook post. SNAV designs and runs complete lead generation funnels that attract the right people, capture their details and follow up automatically until they're ready to buy.</p>
+        <p class="service-body">For a plumber, that's a Google Ads campaign targeting emergency plumbing searches, feeding into a fast-loading landing page with a click-to-call button, with automated SMS follow-up for form fills. For a restaurant, it's a Meta Ads campaign promoting a lunch deal, driving to an online reservation with a post-booking email sequence to encourage repeat visits.</p>
+
+        <h3 class="service-h3">Our Lead Generation System</h3>
+        <ul class="service-list">
+          <li><strong>Attract</strong> &#8212; Paid ads (Google, Meta) and SEO that reaching high-intent prospects</li>
+          <li><strong>Capture</strong> &#8212; High-converting landing pages with clear single call-to-action</li>
+          <li><strong>Qualify</strong> &#8212; Intake forms and call scripting to filter serious enquiries</li>
+          <li><strong>Nurture</strong> &#8212; Automated SMS and email sequences for leads not ready to buy yet</li>
+          <li><strong>Report</strong> &#8212; Cost per lead tracking so you know your exact ROI</li>
+        </ul>
+
+        <h3 class="service-h3">Industries We Drive Leads For</h3>
+        <ul class="service-list">
+          <li>Trade services &#8212; electrical, plumbing, HVAC, building, cleaning</li>
+          <li>Home services &#8212; landscaping, pest control, removalists</li>
+          <li>Hospitality &#8212; restaurant bookings, function enquiries, catering</li>
+          <li>Professional services &#8212; accountants, lawyers, financial advisers</li>
+          <li>Health and wellness &#8212; clinics, physio, dentists, gyms</li>
+          <li>Retail and e-commerce &#8212; in-store and online purchase funnels</li>
+        </ul>
+
+        <h3 class="service-h3">What You Get</h3>
+        <ul class="service-list">
+          <li>Custom landing pages built for conversion (not brand, but leads)</li>
+          <li>Ad campaign management (Google and/or Meta)</li>
+          <li>Lead capture form setup and CRM integration</li>
+          <li>Automated SMS/email follow-up sequences</li>
+          <li>Lead quality monitoring and pipeline reporting</li>
+          <li>Monthly cost-per-lead and ROI report</li>
+        </ul>
+      </div>
+      <div class="service-sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-heading">Start Getting More Leads</h3>
+          <p class="sidebar-sub">Tell us about your business and we'll show you exactly how we'd fill your pipeline &#8212; free, no obligation.</p>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-hero { background: linear-gradient(135deg, #1E3A5F 0%, #2a4f80 100%); padding: calc(4rem + 80px) 0 4.5rem; text-align: center; }
+  .breadcrumb { font-size: 0.875rem; color: #7a9bbf; display: block; margin-bottom: 1.5rem; }
+  .breadcrumb:hover { color: #FF6B35; }
+  .service-icon-lg { font-size: 3.5rem; margin-bottom: 1rem; }
+  .service-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: white; margin-bottom: 1rem; }
+  .service-subtitle { font-size: 1.0625rem; color: #94afc7; max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
+  .service-layout { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+  @media (min-width: 1024px) { .service-layout { grid-template-columns: 1fr 380px; } }
+  .service-h2 { font-size: 1.75rem; font-weight: 800; color: var(--text-heading); margin-bottom: 1rem; }
+  .service-h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin: 2rem 0 0.75rem; }
+  .service-body { font-size: 1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1rem; }
+  .service-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9375rem; color: var(--text-body); }
+  .service-list li::before { content: '\2192 '; color: #FF6B35; font-weight: 700; }
+  .sidebar-card { background: var(--bg-alt); border-radius: 0.75rem; padding: 1.75rem; border: 1px solid var(--border-strong); position: sticky; top: calc(80px + 1rem); }
+  .sidebar-heading { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem; }
+  .sidebar-sub { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+</style>
+
+

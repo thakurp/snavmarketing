@@ -1,0 +1,88 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout
+  title="App Development Sydney &#8212; Mobile & Web Apps"
+  description="SNAV Marketing builds custom mobile apps and web apps for Sydney SMEs. Booking apps, customer portals, trade management tools and more. Powered by modern technology."
+  canonical="/services/app-development"
+>
+  <section class="service-hero">
+    <div class="container-lg">
+      <a href="/services" class="breadcrumb">&#8592; All Services</a>
+      <div class="service-icon-lg">📲</div>
+      <h1 class="service-title">App Development</h1>
+      <p class="service-subtitle">Custom mobile and web apps that give your business a genuine competitive edge &#8212; and delight your customers in the process.</p>
+      <a href="/contact" class="btn-primary">Discuss Your App Idea</a>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-lg service-layout">
+      <div class="service-main">
+        <h2 class="service-h2">An App Built Around Your Business &#8212; Not a Template</h2>
+        <p class="service-body">Apps used to be for big corporations. Not anymore. With modern technology, we can build powerful custom apps that streamline your operations, reduce admin time and create new revenue streams &#8212; at a fraction of what it used to cost.</p>
+        <p class="service-body">From a booking app for a multi-location barber shop, to a quote and job management tool for tradies, to a loyalty rewards app for a restaurant group &#8212; we build apps that solve real business problems and make you more money.</p>
+
+        <h3 class="service-h3">What We Build</h3>
+        <ul class="service-list">
+          <li>Customer booking and appointment apps</li>
+          <li>Trade business job management and quoting tools</li>
+          <li>Restaurant ordering and loyalty apps</li>
+          <li>Customer portal and account management systems</li>
+          <li>Business automation tools (connect your systems)</li>
+          <li>Progressive Web Apps (PWA) &#8212; app-like experience via browser</li>
+          <li>Native iOS and Android apps</li>
+        </ul>
+
+        <h3 class="service-h3">Our Technology Stack</h3>
+        <ul class="service-list">
+          <li>React Native &#8212; cross-platform mobile apps (iOS + Android from one codebase)</li>
+          <li>Next.js &#8212; fast, SEO-friendly web apps</li>
+          <li>Supabase / Firebase &#8212; real-time databases and authentication</li>
+          <li>Stripe &#8212; payment processing integration</li>
+          <li>Custom API integrations (Xero, Mindbody, Square, etc.)</li>
+        </ul>
+
+        <h3 class="service-h3">Our Process</h3>
+        <ul class="service-list">
+          <li>Discovery &#8212; understand your problem, users and success criteria</li>
+          <li>Wireframing &#8212; map out the user journey before a line of code is written</li>
+          <li>Design &#8212; pixel-perfect UI that reflects your brand</li>
+          <li>Build &#8212; agile development with regular preview builds</li>
+          <li>Testing &#8212; thorough QA before launch</li>
+          <li>Launch + ongoing support and feature additions</li>
+        </ul>
+      </div>
+      <div class="service-sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-heading">Tell Us Your App Idea</h3>
+          <p class="sidebar-sub">No idea is too small or too ambitious. Let's have a free discovery chat and see what's possible.</p>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-hero { background: linear-gradient(135deg, #1E3A5F 0%, #2a4f80 100%); padding: calc(4rem + 80px) 0 4.5rem; text-align: center; }
+  .breadcrumb { font-size: 0.875rem; color: #7a9bbf; display: block; margin-bottom: 1.5rem; }
+  .breadcrumb:hover { color: #FF6B35; }
+  .service-icon-lg { font-size: 3.5rem; margin-bottom: 1rem; }
+  .service-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: white; margin-bottom: 1rem; }
+  .service-subtitle { font-size: 1.0625rem; color: #94afc7; max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
+  .service-layout { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+  @media (min-width: 1024px) { .service-layout { grid-template-columns: 1fr 380px; } }
+  .service-h2 { font-size: 1.75rem; font-weight: 800; color: var(--text-heading); margin-bottom: 1rem; }
+  .service-h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin: 2rem 0 0.75rem; }
+  .service-body { font-size: 1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1rem; }
+  .service-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9375rem; color: var(--text-body); }
+  .service-list li::before { content: '\2192 '; color: #FF6B35; font-weight: 700; }
+  .sidebar-card { background: var(--bg-alt); border-radius: 0.75rem; padding: 1.75rem; border: 1px solid var(--border-strong); position: sticky; top: calc(80px + 1rem); }
+  .sidebar-heading { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem; }
+  .sidebar-sub { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+</style>
+
+

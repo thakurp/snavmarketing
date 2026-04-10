@@ -1,0 +1,153 @@
+---
+interface Props {
+  name: string;
+  price: string;
+  period?: string;
+  description: string;
+  features: string[];
+  cta?: string;
+  ctaHref?: string;
+  highlighted?: boolean;
+  badge?: string;
+}
+
+const {
+  name,
+  price,
+  period = '/mo',
+  description,
+  features,
+  cta = 'Get Started',
+  ctaHref = '/contact',
+  highlighted = false,
+  badge,
+} = Astro.props;
+---
+
+<div class:list={['pricing-card', { 'pricing-card--highlighted': highlighted }]}>
+  {badge && <div class="pricing-badge">{badge}</div>}
+  <div class="pricing-top">
+    <h3 class="pricing-name">{name}</h3>
+    <div class="pricing-price">
+      <span class="price-amount">{price}</span>
+      <span class="price-period">{period}</span>
+    </div>
+    <p class="pricing-desc">{description}</p>
+  </div>
+  <ul class="pricing-features">
+    {features.map(f => (
+      <li class="pricing-feature">
+        <span class="check-icon" aria-hidden="true">✓</span>
+        <span>{f}</span>
+      </li>
+    ))}
+  </ul>
+  <a href={ctaHref} class:list={[highlighted ? 'btn-primary' : 'btn-outline', 'pricing-cta']}>{cta}</a>
+</div>
+
+<style>
+  .pricing-card {
+    position: relative;
+    background: var(--surface-card);
+    border-radius: var(--r-lg);
+    border: 2px solid var(--border-strong);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .pricing-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .pricing-card--highlighted {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-glow-sm);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FF6B35;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+
+  .pricing-top {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .price-amount {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-heading);
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .pricing-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 1;
+  }
+
+  .pricing-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.9rem;
+    color: var(--text-body);
+  }
+
+  .check-icon {
+    color: #FF6B35;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .pricing-cta {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9375rem;
+  }
+</style>

@@ -1,0 +1,85 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout
+  title="Website Optimisation &#8212; SEO & CRO Sydney"
+  description="SNAV Marketing improves SEO rankings, page speed and conversion rates for Sydney business websites. Get found on Google and convert more visitors into customers."
+  canonical="/services/website-optimisation"
+>
+  <section class="service-hero">
+    <div class="container-lg">
+      <a href="/services" class="breadcrumb">&#8592; All Services</a>
+      <div class="service-icon-lg">🚀</div>
+      <h1 class="service-title">Website Optimisation</h1>
+      <p class="service-subtitle">Already have a website? We'll make it rank higher on Google, load faster and convert more visitors into paying customers.</p>
+      <a href="/contact" class="btn-primary">Get a Free Website Audit</a>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-lg service-layout">
+      <div class="service-main">
+        <h2 class="service-h2">Your Website Could Be Working Much Harder</h2>
+        <p class="service-body">Most Sydney SME websites are sitting on untapped potential. They rank on page 2&#8211;3 of Google (which is basically invisible), they load too slowly on mobile and they don't have clear calls to action that prompt visitors to reach out.</p>
+        <p class="service-body">SNAV's optimisation service fixes all three. We start with a deep audit of your existing site &#8212; technical SEO, content gaps, speed issues, mobile experience and conversion bottlenecks &#8212; then build a prioritised roadmap to fix what matters most.</p>
+
+        <h3 class="service-h3">Search Engine Optimisation (SEO)</h3>
+        <ul class="service-list">
+          <li>Keyword research &#8212; what your real customers are searching for in Sydney</li>
+          <li>On-page SEO &#8212; titles, meta descriptions, headings, content optimisation</li>
+          <li>Technical SEO &#8212; crawlability, indexing, structured data, sitemaps</li>
+          <li>Local SEO &#8212; Google Business Profile, local citations, suburb-level targeting</li>
+          <li>Link building &#8212; earning quality backlinks that boost authority</li>
+          <li>Monthly ranking reports showing clear progress</li>
+        </ul>
+
+        <h3 class="service-h3">Page Speed Optimisation</h3>
+        <ul class="service-list">
+          <li>Image compression and modern format conversion (WebP)</li>
+          <li>JavaScript and CSS minification and deferral</li>
+          <li>Hosting and CDN recommendations</li>
+          <li>Core Web Vitals improvement (LCP, CLS, FID)</li>
+        </ul>
+
+        <h3 class="service-h3">Conversion Rate Optimisation (CRO)</h3>
+        <ul class="service-list">
+          <li>Heatmap and session recording analysis</li>
+          <li>A/B testing of headlines, CTAs and page layouts</li>
+          <li>Contact form optimisation</li>
+          <li>Trust signals and social proof placement</li>
+          <li>Mobile UX improvements</li>
+        </ul>
+      </div>
+      <div class="service-sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-heading">Free Website Audit</h3>
+          <p class="sidebar-sub">Send us your website and we'll review SEO, speed and conversion &#8212; free, no obligation.</p>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-hero { background: linear-gradient(135deg, #1E3A5F 0%, #2a4f80 100%); padding: calc(4rem + 80px) 0 4.5rem; text-align: center; }
+  .breadcrumb { font-size: 0.875rem; color: #7a9bbf; display: block; margin-bottom: 1.5rem; }
+  .breadcrumb:hover { color: #FF6B35; }
+  .service-icon-lg { font-size: 3.5rem; margin-bottom: 1rem; }
+  .service-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: white; margin-bottom: 1rem; }
+  .service-subtitle { font-size: 1.0625rem; color: #94afc7; max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
+  .service-layout { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+  @media (min-width: 1024px) { .service-layout { grid-template-columns: 1fr 380px; } }
+  .service-h2 { font-size: 1.75rem; font-weight: 800; color: var(--text-heading); margin-bottom: 1rem; }
+  .service-h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin: 2rem 0 0.75rem; }
+  .service-body { font-size: 1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1rem; }
+  .service-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9375rem; color: var(--text-body); }
+  .service-list li::before { content: '\2192 '; color: #FF6B35; font-weight: 700; }
+  .sidebar-card { background: var(--bg-alt); border-radius: 0.75rem; padding: 1.75rem; border: 1px solid var(--border-strong); position: sticky; top: calc(80px + 1rem); }
+  .sidebar-heading { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem; }
+  .sidebar-sub { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+</style>
+
+

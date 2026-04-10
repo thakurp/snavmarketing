@@ -1,0 +1,216 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const services = [
+  {
+    icon: '🎯',
+    title: 'Digital Advertising',
+    description: 'Google Ads, Meta Ads and display campaigns that put you in front of Sydney customers actively searching for your services. Every dollar tracked, every click accountable.',
+    href: '/services/digital-advertising',
+  },
+  {
+    icon: '📱',
+    title: 'Social Media Marketing',
+    description: 'Build a loyal following and turn scroll-passers into paying customers with thumb-stopping content and smart community management.',
+    href: '/services/social-media-marketing',
+  },
+  {
+    icon: '🌐',
+    title: 'Website Creation',
+    description: 'Fast, modern, mobile-first websites that look great and convert visitors into leads. Built to impress and optimised from day one.',
+    href: '/services/website-creation',
+  },
+  {
+    icon: '🚀',
+    title: 'Website Optimisation',
+    description: 'SEO, page speed, and conversion rate improvements that get you ranking higher and earning more from your existing traffic.',
+    href: '/services/website-optimisation',
+  },
+  {
+    icon: '📲',
+    title: 'App Development',
+    description: 'Custom mobile and web apps that streamline your operations, delight your customers and give you a genuine competitive edge.',
+    href: '/services/app-development',
+  },
+  {
+    icon: '⚡',
+    title: 'Lead Generation',
+    description: 'Data-driven funnels and campaigns that fill your pipeline with qualified enquiries &#8212; so you can focus on delivering great work.',
+    href: '/services/lead-generation',
+  },
+];
+---
+
+<Layout
+  title="Our Services"
+  description="SNAV Marketing offers digital advertising, social media marketing, website creation, SEO, app development and lead generation for Sydney SMEs, tradies and local businesses."
+  canonical="/services"
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container-lg page-hero-inner">
+      <p class="page-hero-eyebrow">What We Do</p>
+      <h1 class="page-hero-title">Full-Service Digital Marketing<br />for Sydney Businesses</h1>
+      <p class="page-hero-sub">
+        Whether you need more leads, more bookings or a brand-new online presence &#8212; SNAV has the expertise to make it happen. Every service is delivered by our Sydney-based team with one goal: more customers for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section-pad" style="background: var(--bg-alt);">
+    <div class="container-lg">
+      <div class="services-grid">
+        {services.map(s => <ServiceCard {...s} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why One Agency -->
+  <section class="section-pad">
+    <div class="container-lg one-agency">
+      <div class="one-agency-text">
+        <SectionHeading
+          title="One Agency, Every Channel"
+          subtitle="Stop juggling multiple vendors. When ads, SEO, social and your website all talk to each other, your marketing works harder &#8212; and your results compound."
+          centered={false}
+        />
+        <ul class="one-agency-list">
+          <li>? Consistent brand messaging across every channel</li>
+          <li>? Data from ads informs SEO; SEO insights sharpen ad targeting</li>
+          <li>? Single point of contact &#8212; no more agency blame-games</li>
+          <li>? Combined reporting across all channels in one dashboard</li>
+        </ul>
+        <a href="/contact" class="btn-primary" style="margin-top:1.5rem;">Start Your Growth Journey</a>
+      </div>
+      <div class="one-agency-visual">
+        <div class="channel-node channel-node--center">SNAV</div>
+        <div class="channel-grid">
+          {['Google Ads', 'Social Media', 'SEO', 'Website', 'Apps', 'Leads'].map(c => (
+            <div class="channel-pill">{c}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad" style="background:#1E3A5F; text-align:center;">
+    <div class="container-lg">
+      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem); font-weight:800; color:white; margin-bottom:1rem;">
+        Not Sure Where to Start?
+      </h2>
+      <p style="font-size:1.0625rem; color:#94afc7; max-width:540px; margin:0 auto 2rem; line-height:1.7;">
+        Book a free 30-minute discovery call. We'll tell you exactly which services will get you the best ROI based on your business and budget.
+      </p>
+      <a href="/contact" class="btn-primary" style="font-size:1rem; padding:0.875rem 2.5rem;">
+        Book Free Discovery Call
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #1E3A5F 0%, #2a4f80 100%);
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+
+  .page-hero-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #FF6B35;
+    margin-bottom: 1rem;
+  }
+
+  .page-hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-hero-sub {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #94afc7;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px)  { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .one-agency {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) { .one-agency { grid-template-columns: 1fr 1fr; } }
+
+  .one-agency-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--text-body);
+    font-weight: 500;
+  }
+
+  .one-agency-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .channel-node--center {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1E3A5F, #2a4f80);
+    color: white;
+    font-weight: 900;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgb(30 58 95 / 0.3);
+  }
+
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .channel-pill {
+    background: var(--surface-2);
+    border: 1.5px solid #d1d9e6;
+    color: var(--text-heading);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+</style>
+
+

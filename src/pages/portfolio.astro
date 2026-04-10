@@ -1,0 +1,169 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+
+const caseStudies = [
+  {
+    client: "Sydney Plumbing Co.",
+    location: "Parramatta, NSW",
+    industry: "Tradies",
+    service: "Google Ads + Local SEO",
+    result: "+312% Leads",
+    resultDetail: "from 8 to 33 qualified calls per month",
+    tags: ["Google Ads", "Local SEO"],
+    industryIcon: "&#128295;"
+  },
+  {
+    client: "Harbour View Bistro",
+    location: "Manly, NSW",
+    industry: "Restaurants",
+    service: "Social Media Marketing",
+    result: "+180% Bookings",
+    resultDetail: "Instagram and Facebook driving direct reservations",
+    tags: ["Social Media", "Meta Ads"],
+    industryIcon: "&#127374;"
+  },
+  {
+    client: "BladeKing Barbers",
+    location: "Surry Hills, NSW",
+    industry: "Barber Shops",
+    service: "Website Creation + Google Ads",
+    result: "3&#215; Revenue",
+    resultDetail: "new website and paid ads tripled monthly revenue in 90 days",
+    tags: ["Website", "Google Ads"],
+    industryIcon: "&#128136;"
+  },
+  {
+    client: "EcoClean Services",
+    location: "Penrith, NSW",
+    industry: "Small Business",
+    service: "Lead Generation + Website",
+    result: "&#8211;60% Cost Per Lead",
+    resultDetail: "optimised funnel cut lead costs from $85 to $34",
+    tags: ["Lead Generation", "Website"],
+    industryIcon: "&#127970;"
+  },
+  {
+    client: "Flex Physio Studio",
+    location: "Chatswood, NSW",
+    industry: "Health &amp; Wellness",
+    service: "Social Media + App Development",
+    result: "+240% Bookings",
+    resultDetail: "custom booking app and social campaigns filled the diary",
+    tags: ["App Dev", "Social Media"],
+    industryIcon: "&#128170;"
+  },
+  {
+    client: "TechFix Mobile Repairs",
+    location: "Liverpool, NSW",
+    industry: "Retail / E-commerce",
+    service: "Website Optimisation + Google Ads",
+    result: "+420% Online Sales",
+    resultDetail: "website speed improvements and targeted Shopping campaigns",
+    tags: ["SEO", "Google Ads", "Website"],
+    industryIcon: "&#128241;"
+  }
+];
+---
+
+<Layout
+  title="Portfolio &#8212; Client Results &amp; Case Studies | SNAV Marketing Sydney"
+  description="Real results for real Sydney businesses. See how SNAV Marketing has helped tradies, restaurants, barber shops and small businesses grow with digital marketing."
+  canonical="/portfolio"
+>
+  <section class="portfolio-hero">
+    <div class="container-lg">
+      <span class="hero-tag">Client Results</span>
+      <h1 class="hero-title">Results That Speak<br/>For Themselves</h1>
+      <p class="hero-sub">Every number below is a real outcome for a real Sydney business &#8212; no inflated metrics, no vague "growth".</p>
+    </div>
+  </section>
+
+  <section class="results-bar">
+    <div class="container-lg results-grid">
+      <div class="result-stat">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Sydney Clients</span>
+      </div>
+      <div class="result-stat">
+        <span class="stat-num">$4.2M+</span>
+        <span class="stat-label">Revenue Generated</span>
+      </div>
+      <div class="result-stat">
+        <span class="stat-num">210%</span>
+        <span class="stat-label">Avg ROI Increase</span>
+      </div>
+      <div class="result-stat">
+        <span class="stat-num">8+</span>
+        <span class="stat-label">Industries Served</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-lg">
+      <div class="cases-grid">
+        {caseStudies.map((cs) => (
+          <div class="case-card">
+            <div class="case-header">
+              <span class="case-icon" set:html={cs.industryIcon}></span>
+              <div>
+                <div class="case-client">{cs.client}</div>
+                <div class="case-location">{cs.location}</div>
+              </div>
+            </div>
+            <div class="case-service" set:html={cs.service}></div>
+            <div class="case-result" set:html={cs.result}></div>
+            <div class="case-detail" set:html={cs.resultDetail}></div>
+            <div class="case-tags">
+              {cs.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container-lg cta-inner">
+      <h2 class="cta-title">Ready to Be Our Next Success Story?</h2>
+      <p class="cta-body">Tell us about your business and we'll show you exactly how we'd get you results like these.</p>
+      <a href="/contact" class="btn-primary">Get Your Free Strategy Session</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .portfolio-hero { background: linear-gradient(135deg, #1E3A5F 0%, #152b47 100%); padding: calc(5rem + 80px) 0 5rem; text-align: center; }
+  .hero-tag { display: inline-block; background: rgba(255,107,53,0.15); color: #FF6B35; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.375rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+  .hero-title { font-size: clamp(2.25rem, 5vw, 3.25rem); font-weight: 900; color: white; margin-bottom: 1rem; line-height: 1.15; }
+  .hero-sub { font-size: 1.0625rem; color: #94afc7; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+  .results-bar { background: #FF6B35; padding: 2.5rem 0; }
+  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; text-align: center; }
+  @media (min-width: 768px) { .results-grid { grid-template-columns: repeat(4, 1fr); } }
+  .result-stat { display: flex; flex-direction: column; gap: 0.25rem; }
+  .stat-num { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; color: white; }
+  .stat-label { font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .cases-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 640px) { .cases-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .cases-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .case-card { background: var(--surface-card, var(--bg-alt)); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .case-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+  .case-header { display: flex; align-items: center; gap: 0.875rem; }
+  .case-icon { font-size: 2rem; line-height: 1; }
+  .case-client { font-size: 1rem; font-weight: 700; color: var(--text-heading); }
+  .case-location { font-size: 0.8125rem; color: var(--text-muted); }
+  .case-service { font-size: 0.8125rem; font-weight: 600; color: #FF6B35; text-transform: uppercase; letter-spacing: 0.06em; }
+  .case-result { font-size: 1.5rem; font-weight: 900; color: #FF6B35; }
+  .case-detail { font-size: 0.9rem; color: var(--text-body); line-height: 1.6; flex: 1; }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: 0.25rem; }
+  .tag { font-size: 0.75rem; font-weight: 600; background: var(--surface-2, rgba(255,255,255,0.06)); color: var(--text-heading); padding: 0.25rem 0.625rem; border-radius: 100px; border: 1px solid var(--border); }
+
+  .cta-section { background: linear-gradient(135deg, #1E3A5F 0%, #2a4f80 100%); padding: 5rem 0; text-align: center; }
+  .cta-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; color: white; margin-bottom: 1rem; }
+  .cta-body { font-size: 1.0625rem; color: #94afc7; max-width: 480px; margin: 0 auto 2rem; line-height: 1.7; }
+</style>

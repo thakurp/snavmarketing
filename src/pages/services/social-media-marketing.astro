@@ -1,0 +1,150 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const benefits = [
+  { icon: '🎨', title: 'Scroll-Stopping Content', desc: 'Photos and graphics crafted to stop the scroll and make people want to visit, book or call &#8212; especially for visual industries like barbers and restaurants.' },
+  { icon: '💬', title: 'Community Management', desc: 'We respond to comments and messages promptly, building trust and loyalty with your followers while you focus on the work.' },
+  { icon: '📈', title: 'Organic Growth Strategy', desc: 'Hashtag research, posting schedules and platform algorithms understood &#8212; so your following grows month after month.' },
+  { icon: '🎬', title: 'Reels & Short Video', desc: 'Short-form video is the #1 way to reach new audiences. We plan, script and produce Reels and TikToks that perform.' },
+  { icon: '🤝', title: 'Influencer & Collab Outreach', desc: 'Connect with local Sydney influencers and complementary businesses to grow your reach authentically.' },
+  { icon: '📊', title: 'Monthly Performance Reports', desc: "See exactly what's working &#8212; reach, engagement, website clicks and real enquiries driven from social." },
+];
+---
+
+<Layout
+  title="Social Media Marketing Sydney"
+  description="SNAV Marketing builds and manages social media for Sydney tradies, barbers, restaurants and SMEs. Instagram, Facebook, TikTok content creation and community management."
+  canonical="/services/social-media-marketing"
+>
+  <section class="service-hero">
+    <div class="container-lg service-hero-inner">
+      <a href="/services" class="breadcrumb">&#8592; All Services</a>
+      <div class="service-icon-lg">📱</div>
+      <h1 class="service-title">Social Media Marketing</h1>
+      <p class="service-subtitle">Build a community that converts. Instagram, Facebook, TikTok and LinkedIn managed by Sydney experts who know your industry.</p>
+      <a href="/contact" class="btn-primary service-hero-cta">Get a Free Social Audit</a>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-lg service-layout">
+      <div class="service-main">
+        <h2 class="service-h2">Social Media That Actually Brings Customers In</h2>
+        <p class="service-body">Most business social media is either a ghost town or a sales brochure. Neither works. We create social media strategies built on what your target customers actually want to see &#8212; real business life, great work, local community moments and offers that make them act.</p>
+        <p class="service-body">For a barber shop, that means behind-the-chair transformation videos and booking-call-to-action stories. For a restaurant, it's golden-hour food photography and weekly specials that fill Tuesday nights. For tradies, it's before/after project shots that build credibility and get shared.</p>
+
+        <h3 class="service-h3">Platforms We Manage</h3>
+        <ul class="service-list">
+          <li>Instagram &#8212; grid strategy, Stories, Reels</li>
+          <li>Facebook &#8212; posts, local community groups, event promotion</li>
+          <li>TikTok &#8212; short video for maximum organic reach</li>
+          <li>Google Business Profile &#8212; posts, reviews, Q&amp;A</li>
+          <li>LinkedIn &#8212; for B2B and professional service businesses</li>
+        </ul>
+
+        <h3 class="service-h3">What's Included</h3>
+        <ul class="service-list">
+          <li>Platform and content strategy tailored to your industry</li>
+          <li>Content calendar planned 4 weeks in advance</li>
+          <li>Professional graphics and caption writing</li>
+          <li>Reels/short video production guidance</li>
+          <li>Daily community management (comments and DMs)</li>
+          <li>Hashtag research and trend monitoring</li>
+          <li>Monthly analytics and insights report</li>
+        </ul>
+      </div>
+      <div class="service-sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-heading">Grow Your Following</h3>
+          <p class="sidebar-sub">Tell us about your business and we'll map out a social media strategy &#8212; free, no obligation.</p>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="background: var(--bg-alt);">
+    <div class="container-lg">
+      <h2 class="benefits-heading">Why Social Media Works for SMEs</h2>
+      <div class="benefits-grid">
+        {benefits.map(b => (
+          <div class="benefit-card">
+            <span class="benefit-icon">{b.icon}</span>
+            <h3 class="benefit-title">{b.title}</h3>
+            <p class="benefit-desc">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-hero {
+    background: linear-gradient(135deg, #1E3A5F 0%, #2a4f80 100%);
+    padding: calc(4rem + 80px) 0 4.5rem;
+    text-align: center;
+  }
+  .breadcrumb { font-size: 0.875rem; color: #7a9bbf; display: block; margin-bottom: 1.5rem; }
+  .breadcrumb:hover { color: #FF6B35; }
+  .service-icon-lg { font-size: 3.5rem; margin-bottom: 1rem; }
+  .service-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: white; margin-bottom: 1rem; }
+  .service-subtitle { font-size: 1.0625rem; color: #94afc7; max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
+  .service-hero-cta { font-size: 1rem; padding: 0.875rem 2rem; }
+
+  .service-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) { .service-layout { grid-template-columns: 1fr 380px; } }
+
+  .service-h2 { font-size: 1.75rem; font-weight: 800; color: var(--text-heading); margin-bottom: 1rem; }
+  .service-h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin: 2rem 0 0.75rem; }
+  .service-body { font-size: 1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1rem; }
+  .service-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--text-body);
+  }
+  .service-list li::before { content: '\2192 '; color: #FF6B35; font-weight: 700; }
+
+  .sidebar-card {
+    background: var(--bg-alt);
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    border: 1px solid var(--border-strong);
+    position: sticky;
+    top: calc(80px + 1rem);
+  }
+  .sidebar-heading { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem; }
+  .sidebar-sub { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+
+  .benefits-heading { font-size: clamp(1.5rem,3vw,2rem); font-weight: 800; color: var(--text-heading); text-align: center; margin-bottom: 2.5rem; }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px)  { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .benefits-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .benefit-card {
+    background: var(--surface-card);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px rgb(0 0 0 / 0.06);
+    border: 1px solid var(--border);
+  }
+  .benefit-icon { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+  .benefit-title { font-size: 1rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem; }
+  .benefit-desc { font-size: 0.9rem; line-height: 1.65; color: var(--text-muted); }
+</style>
+
+

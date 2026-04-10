@@ -1,0 +1,17 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif,svg,webp}", "/assets/**", "/*.{css,js,ico,txt,xml}"]
+  },
+  "routes": [
+    {
+      "route": "/sitemap.xml",
+      "serve": "/sitemap-index.xml"
+    }
+  ],
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  }
+}

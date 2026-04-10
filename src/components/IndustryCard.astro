@@ -1,0 +1,88 @@
+---
+interface Props {
+  icon: string;
+  industry: string;
+  tagline: string;
+  description: string;
+  href: string;
+  accent?: string;
+}
+
+const { icon, industry, tagline, description, href, accent = '#1E3A5F' } = Astro.props;
+---
+
+<a href={href} class="industry-card card">
+  <div class="industry-icon">{icon}</div>
+  <h3 class="industry-name">{industry}</h3>
+  <p class="industry-tagline">{tagline}</p>
+  <p class="industry-desc">{description}</p>
+  <span class="industry-cta">See how we help →</span>
+</a>
+
+<style>
+  .industry-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  }
+
+  .industry-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1E3A5F, #FF6B35);
+  }
+
+  .industry-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+
+  .industry-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin-bottom: 0.25rem;
+  }
+
+  .industry-tagline {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #FF6B35;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .industry-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    flex: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .industry-cta {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-top: auto;
+    transition: letter-spacing 0.15s;
+  }
+
+  .industry-card:hover .industry-cta {
+    letter-spacing: 0.02em;
+  }
+</style>
